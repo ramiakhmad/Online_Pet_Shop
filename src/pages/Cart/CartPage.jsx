@@ -5,7 +5,6 @@ import { changeQuantity, removeItem, updateQuantity } from '../../redux/cartSlic
 import styles from './Cart.module.css';
 import FormCart from '../../components/formCart/FormCart';
 import API_URL from '../../utils/api';
-
 export default function CartPage() {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
