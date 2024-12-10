@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 import cartIcon from "../../assets/cartIcon.svg";
+import cartIconWhite from "../../assets/whiteCartIcon.svg";
 import styles from "./Header.module.css";
 import { useSelector } from "react-redux";
 import { Switcher, MobileSwitcher } from "../theme/switch";
@@ -65,7 +66,7 @@ export default function Header({ isDarkMode, toggleDarkMode }) {
               <p className={styles.Header_cartTotalQuantity}>{totalQuantity}</p>
             )}
             <img 
-              src={cartIcon} 
+              src={isDarkMode ? cartIconWhite : cartIcon} 
               alt="cart" 
               className={styles.Header_cart} 
               style={{ width: isMobile ? "30px" : "40px", height: "auto" }} 

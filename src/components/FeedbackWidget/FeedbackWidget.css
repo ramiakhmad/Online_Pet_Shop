@@ -1,0 +1,52 @@
+#cs-fb-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.feedback_widget_button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  justify-content: center;
+}
+
+.widget-icon {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.widget-icon img {
+  width: 60px;
+  height: 60px;
+}
+
+.messangers-block {
+  display: flex;
+  flex-direction: column;
+  background: #f1f1f1;
+  padding: 15px;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+}
+
+.messangers-block a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: black;
+  margin: 5px 0;
+}
+
+.fb-icon-img {
+  margin-right: 10px;
+  width: 24px;
+  height: 24px;
+}

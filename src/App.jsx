@@ -16,6 +16,7 @@ import CartPage from "./pages/Cart/CartPage";
 import NotFoundPage from "./pages/NotFound/NotFoundPage";
 import store from "./redux/store";
 import "./App.css";
+import FeedbackWidget from "./components/FeedbackWidget/FeedbackWidget";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -51,6 +52,7 @@ function App() {
             <Footer />
           </div>
           <ConnectedModal />
+          <FeedbackWidget />
         </BrowserRouter>
       </ReduxProvider>
     </ThemeProvider>
