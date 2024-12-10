@@ -103,6 +103,7 @@
     cursor: pointer;
     background: white;
     position: relative;
+    color: #8B8B8B;
 }
 .Filter_includeDiscount_select > svg {
     margin: 0 4px;

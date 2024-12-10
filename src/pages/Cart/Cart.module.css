@@ -11,7 +11,7 @@
 .CartPage_titleBox_title {
     font-family: 'Montserrat';
     font-size: clamp(20px, 6vw, 64px);
-    color: #282828;
+    color: var(--text-primary);
     text-align: left;
     white-space: nowrap;
 }

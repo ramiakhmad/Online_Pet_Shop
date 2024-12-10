@@ -5,10 +5,16 @@ header {
     border-bottom: 1px solid #DDDDDD;
 
 }
+.Header_navBox{
+    display: flex;
+    align-items: center;
+    margin-right: 2px;
+}
 
 .Header_logo {
-    height: clamp(30px, 7.5vw, 70px);
-    margin-right: 2px;
+    /* height: clamp(30px, 7.5vw, 70px); */
+    width:70px;
+    height:70px;
 }
 
 .Header_logo:hover {
@@ -31,7 +37,7 @@ header {
 }
 
 .Header_navBox a:visited {
-    color: #282828;
+    color: var(--text-primary);
 }
 
 .Header_navBox a:hover {

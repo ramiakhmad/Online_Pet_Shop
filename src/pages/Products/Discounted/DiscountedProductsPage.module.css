@@ -7,7 +7,7 @@
 .DiscountedProductsPage h2 {
     font-family: 'Montserrat, sans-serif';
     font-size: clamp(30px, 6vw, 64px);
-    color: #282828;
+    color: var(--text-primary);
     text-align: left;
     margin-bottom: 40px;
 }

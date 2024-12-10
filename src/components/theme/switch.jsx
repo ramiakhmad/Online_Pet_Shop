@@ -1,5 +1,8 @@
-import { styled } from "@mui/material/styles";
-import Switch, { SwitchProps } from "@mui/material/Switch";
+import React, { useState } from "react";
+import { ThemeProvider, CssBaseline } from "@mui/material";
+import { lightTheme, darkTheme } from "../../theme";
+import { styled, Switch } from "@mui/material";
+import "./switch.css";
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
   height: 34,
@@ -55,13 +58,18 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     }),
   },
 }));
-export default function CustomizedSwitches() {
+function Switcher() {
+  const [darkMode, setDarkMode] = useState(false);
   return (
-    <FormGroup>
-      <FormControlLabel
-        control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
-        label="MUI switch"
-      />
-    </FormGroup>
+    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
+      <CssBaseline />
+      <div className="switcher" style={{ padding: 0 }}>
+        <MaterialUISwitch
+          checked={darkMode}
+          onChange={() => setDarkMode(!darkMode)}
+        />
+      </div>
+    </ThemeProvider>
   );
 }
+export default Switcher;

@@ -6,7 +6,7 @@
 .CategoriesPage h2 {
     font-family: 'Montserrat';
     font-size: clamp(30px, 6vw, 64px);
-    color: #282828;
+    color: var(--text-primary);
     text-align: left;
 }
 .CategoriesPageBox {

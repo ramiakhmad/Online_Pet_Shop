@@ -146,7 +146,7 @@ function Carousel() {
         <Box
           sx={{
             position: "absolute",
-            top: "40%",
+            top: "50%",
             left: 0,
             transform: "translateY(-50%)",
           }}
@@ -158,7 +158,7 @@ function Carousel() {
         <Box
           sx={{
             position: "absolute",
-            top: "40%",
+            top: "50%",
             right: 0,
             transform: "translateY(-50%)"
           }}
