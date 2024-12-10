@@ -9,7 +9,7 @@ import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import IconButton from "@mui/material/IconButton";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
-import API_URL from "../../utils/api"
+import API_URL from "../../utils/api";
 
 function Carousel() {
   const [images, setImages] = useState([]);
@@ -33,11 +33,12 @@ function Carousel() {
   }
 
   useEffect(() => {
-    axios.get(`${API_URL}/categories/all`)
-      .then(response => {
+    axios
+      .get(`${API_URL}/categories/all`)
+      .then((response) => {
         setImages(response.data);
       })
-      .catch(error => {
+      .catch((error) => {
         console.error("There was an error fetching the data!", error);
       });
   }, []);
@@ -49,7 +50,9 @@ function Carousel() {
   };
 
   const handleBack = () => {
-    setActiveStep((prevActiveStep) => (prevActiveStep - 1 + maxSteps) % maxSteps);
+    setActiveStep(
+      (prevActiveStep) => (prevActiveStep - 1 + maxSteps) % maxSteps
+    );
   };
 
   const getDisplayImages = () => {
@@ -58,7 +61,10 @@ function Carousel() {
     if (endIndex > startIndex) {
       return images.slice(startIndex, endIndex);
     } else {
-      return [...images.slice(startIndex, maxSteps), ...images.slice(0, endIndex)];
+      return [
+        ...images.slice(startIndex, maxSteps),
+        ...images.slice(0, endIndex),
+      ];
     }
   };
 
@@ -71,39 +77,46 @@ function Carousel() {
           alignItems: "center",
           mx: 3,
           mb: 5,
-        }}
-      >
-         <Typography
+        }}>
+        <Typography
           variant="h3"
           sx={{
             fontSize: "clamp(28px, 6vw, 64px)",
             fontWeight: 700,
             textAlign: "left",
             mr: 3,
-          }}
-        >
+          }}>
           Categories
         </Typography>
         <Box sx={{ width: "100%", borderBottom: "1px solid #DDDDDD" }}></Box>
-        <Link to="/categories"><Box
-          sx={{
-            whiteSpace: "nowrap",
-            fontSize: "clamp(10px, 1.5vw, 16px)",
-            fontWeight: 500,
-            color: "#8B8B8B",
-            border: "1px solid #DDDDDD",
-            borderRadius: "6px",
-            padding: "8px 16px",
-            minWidth: "fit-content",
-            ":hover": { backgroundColor: "#F1F3F4" },
-            ":active": { color: "#282828" },
-          }}
-        >
-          All categories
-        </Box></Link>
+        <Link to="/categories">
+          <Box
+            sx={{
+              whiteSpace: "nowrap",
+              fontSize: "clamp(10px, 1.5vw, 16px)",
+              fontWeight: 500,
+              color: "var(--text-primary)",
+              border: "1px solid #DDDDDD",
+              borderRadius: "6px",
+              padding: "8px 16px",
+              minWidth: "fit-content",
+              ":hover": { backgroundColor: "#F1F3F4" },
+              ":active": { color: "#282828" },
+            }}>
+            All categories
+          </Box>
+        </Link>
       </Box>
-      <Box sx={{ position: "relative", px:1 }}>
-        <Box sx={{ display: "flex", justifyContent: "space-between"}}>
+      <Box
+        sx={{
+          position: "relative",
+          px: 1,
+        }}>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+          }}>
           {getDisplayImages().map((step, index) => (
             <Box
               key={step.id}
@@ -111,8 +124,7 @@ function Carousel() {
                 flex: 1,
                 mx: 2,
                 textAlign: "center",
-              }}
-            >
+              }}>
               <Link to={`/categories/${step.id}`}>
                 <Box
                   component="img"
@@ -129,14 +141,13 @@ function Carousel() {
                   href="#outlined-buttons"
                   sx={{
                     mt: 2,
-                    color: "#282828",
+                    color: "var(--text-primary)",
                     fontSize: "clamp(12px, 1.8vw, 20px)",
                     fontWeight: 500,
                     textTransform: "none",
                     ":hover": { textDecoration: "underline" },
-                    ":active": { color: "#DDDDDD" },
-                  }}
-                >
+                    ":active": { color: "#282828" },
+                  }}>
                   {step.title}
                 </Button>
               </Link>
@@ -149,8 +160,7 @@ function Carousel() {
             top: "50%",
             left: 0,
             transform: "translateY(-50%)",
-          }}
-        >
+          }}>
           <IconButton onClick={handleBack}>
             <KeyboardArrowLeft />
           </IconButton>
@@ -160,9 +170,8 @@ function Carousel() {
             position: "absolute",
             top: "50%",
             right: 0,
-            transform: "translateY(-50%)"
-          }}
-        >
+            transform: "translateY(-50%)",
+          }}>
           <IconButton onClick={handleNext}>
             <KeyboardArrowRight />
           </IconButton>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import { lightTheme, darkTheme } from "../../theme";
 import { styled, Switch } from "@mui/material";
@@ -58,18 +58,33 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     }),
   },
 }));
-function Switcher() {
-  const [darkMode, setDarkMode] = useState(false);
+
+function Switcher({ isDarkMode, toggleDarkMode }) {
   return (
-    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
+    <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
       <CssBaseline />
       <div className="switcher" style={{ padding: 0 }}>
         <MaterialUISwitch
-          checked={darkMode}
-          onChange={() => setDarkMode(!darkMode)}
+          checked={isDarkMode}
+          onChange={toggleDarkMode}
         />
       </div>
     </ThemeProvider>
   );
 }
-export default Switcher;
+
+function MobileSwitcher({ isDarkMode, toggleDarkMode }) {
+  return (
+    <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
+      <CssBaseline />
+      <div className="mobile_switcher" style={{ padding: 0 }}>
+        <MaterialUISwitch
+          checked={isDarkMode}
+          onChange={toggleDarkMode}
+        />
+      </div>
+    </ThemeProvider>
+  );
+}
+
+export { Switcher, MobileSwitcher };

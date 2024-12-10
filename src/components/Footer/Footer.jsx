@@ -49,7 +49,7 @@ const Footer = () => {
               Phone
             </Typography>
             <Typography
-              sx={{ fontSize: "clamp(18px, 3.5vw, 40px)", fontWeight: 600 }}
+              sx={{ fontSize: "clamp(18px, 3.5vw, 40px)", fontWeight: 600 , color: "#282828"}}
             >
               +49 30 915-88492
             </Typography>
@@ -83,10 +83,10 @@ const Footer = () => {
               </Typography>
               <Box sx={{ display: "flex", alignItems: "center" }}>
                 <IconButton sx={{ pl: 0 ,'&:hover': {backgroundColor: "transparent"}}}>
-                  <a href="https://www.instagram.com/"><img src={instagram} alt="logo" style={{ height: "38px" }} /></a>
+                  <a href="https://www.instagram.com/rami.akhmad"><img src={instagram} alt="logo" style={{ height: "38px" }} /></a>
                 </IconButton>
                 <IconButton sx={{'&:hover': {backgroundColor: "transparent"}}}>
-                 <a href="https://www.whatsapp.com/"><img src={whatsapp} alt="logo" style={{ height: "38px" }} /></a>
+                 <a href="https://www.whatsapp.com/+491719437621"><img src={whatsapp} alt="logo" style={{ height: "38px" }} /></a>
                 </IconButton>
               </Box>
             </Box>
@@ -115,6 +115,7 @@ const Footer = () => {
                 fontSize: "clamp(18px, 3.5vw, 40px)",
                 fontWeight: 600,
                 width: "85%",
+                color: "#282828"
               }}
             >
               Wallstraße 9-13, 10179 Berlin, Deutschland
@@ -139,7 +140,7 @@ const Footer = () => {
             <Typography sx={{ fontSize: 20, fontWeight: 500, color: "#8B8B8B" }}>
               Working Hours
             </Typography>
-            <Typography sx={{ fontSize: "clamp(18px, 3.5vw, 40px)", fontWeight: 600 }}>
+            <Typography sx={{ fontSize: "clamp(18px, 3.5vw, 40px)", fontWeight: 600,color: "#282828" }}>
               24 hours a day
             </Typography>
           </Paper>

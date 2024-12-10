@@ -67,7 +67,7 @@ export default function CarouselSale() {
 
   return (
     <Box sx={{ maxWidth: 1440, flexGrow: 1, m: "0 auto", mt: 10, p: "0 16px" }}>
-      <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", mx: 3, mb: 5 }}>
+      <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", mx: 3, mb: 5}}>
         <Typography
           variant="h3"
           sx={{
@@ -75,6 +75,7 @@ export default function CarouselSale() {
             fontWeight: 700,
             textAlign: "left",
             mr: 3,
+            
           }}
         >
           Sale
@@ -86,7 +87,7 @@ export default function CarouselSale() {
               whiteSpace: "nowrap",
               fontSize: "clamp(10px, 1.5vw, 16px)",
               fontWeight: 500,
-              color: "#8B8B8B",
+              color: "var(--text-primary)" ,
               border: "1px solid #DDDDDD",
               borderRadius: "6px",
               padding: "8px 16px",

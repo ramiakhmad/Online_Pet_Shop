@@ -3,18 +3,18 @@ header {
     display: flex;
     align-items: center;
     border-bottom: 1px solid #DDDDDD;
-
+    flex-direction: column;
 }
-.Header_navBox{
+
+.Header_navBox {
     display: flex;
     align-items: center;
     margin-right: 2px;
 }
 
 .Header_logo {
-    /* height: clamp(30px, 7.5vw, 70px); */
-    width:70px;
-    height:70px;
+    width: clamp(50px, 10vw, 100px);
+    height: auto;
 }
 
 .Header_logo:hover {
@@ -27,7 +27,6 @@ header {
     display: flex;
     gap: clamp(2px, 2vw, 32px);
     padding: 0;
-
 }
 
 .Header_navBox a {
@@ -53,9 +52,11 @@ header {
     animation: icon-hover 1s ease-in-out;
     -webkit-animation: icon-hover 1s ease-in-out;
 }
+
 .Header_cartLink {
-position: relative;
+    position: relative;
 }
+
 .Header_cartTotalQuantity {
     display: flex;
     justify-content: center;
@@ -111,5 +112,16 @@ position: relative;
 @media (max-width: 576px) {
     .Header_navBox_hidden {
         display: none;
+    }
+}
+
+.MobileSwitcherContainer {
+    display: none;
+}
+
+@media (max-width: 450px) {
+    .MobileSwitcherContainer {
+        display: block;
+        margin-top: 10px;
     }
 }
