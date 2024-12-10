@@ -40,7 +40,7 @@ const FeedbackWidget = () => {
             target="_blank"
             rel="noopener noreferrer">
             <img src="/icon_email.svg" alt="Email" className="fb-icon-img" />
-            Написать на почту
+            Send Email
           </a>
         </div>
       )}

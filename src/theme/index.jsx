@@ -11,7 +11,7 @@ export const lightTheme = createTheme({
     },
     text: {
       primary: "#282828",
-      braedcrumb: "#8B8B8B",
+      breadcrumb: "#8B8B8B",
     },
   },
 });
@@ -23,11 +23,11 @@ export const darkTheme = createTheme({
       main: "#5D4785",
     },
     secondary: {
-      main: "#121212",
+      main: "#9c27b0",
     },
     text: {
       primary: "#ffffff",
-      braedcrumb: "#ffffff",
+      breadcrumb: "#B0B0B0",
     },
   },
 });

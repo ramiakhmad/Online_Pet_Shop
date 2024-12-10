@@ -3,11 +3,14 @@ import logo from "../../assets/logo.svg";
 import cartIcon from "../../assets/cartIcon.svg";
 import cartIconWhite from "../../assets/whiteCartIcon.svg";
 import styles from "./Header.module.css";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Switcher, MobileSwitcher } from "../theme/switch";
 import { useState, useEffect } from "react";
+import { toggleTheme } from "../../redux/themeSlice";
 
-export default function Header({ isDarkMode, toggleDarkMode }) {
+export default function Header() {
+  const dispatch = useDispatch();
+  const isDarkMode = useSelector((state) => state.theme.isDarkMode);
   const { items } = useSelector((state) => state.cart);
   const totalQuantity = items.reduce((total, item) => total + item.quantity, 0);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 450);
@@ -36,7 +39,7 @@ export default function Header({ isDarkMode, toggleDarkMode }) {
           <Link style={{ margin: 0, height: "fit-content" }} to="/">
             <img src={logo} alt="logo" className={styles.Header_logo} />
           </Link>
-          <Switcher isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+          <Switcher isDarkMode={isDarkMode} toggleDarkMode={() => dispatch(toggleTheme())} />
         </div>
         <nav>
           <ul className={styles.Header_navBox}>
@@ -73,7 +76,7 @@ export default function Header({ isDarkMode, toggleDarkMode }) {
             />
           </Link>
           <div className={styles.MobileSwitcherContainer}>
-            <MobileSwitcher isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+            <MobileSwitcher isDarkMode={isDarkMode} toggleDarkMode={() => dispatch(toggleTheme())} />
           </div>
         </div>
       </div>

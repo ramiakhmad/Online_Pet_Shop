@@ -1,21 +1,24 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-import { Provider as ReduxProvider } from "react-redux";
+import { ThemeProvider } from '@mui/material/styles';
+import { Provider as ReduxProvider, useSelector } from "react-redux";
 import store from "./redux/store";
+import { lightTheme, darkTheme } from "./theme";
 
-const theme = createTheme({
-  typography: {
-    fontFamily: 'Montserrat',
-    color: "#282828"
-  },
-});
+const ThemedApp = () => {
+  const isDarkMode = useSelector((state) => state.theme.isDarkMode);
+  const theme = isDarkMode ? darkTheme : lightTheme;
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <ReduxProvider store={store}>
+  return (
     <ThemeProvider theme={theme}>
       <App />
     </ThemeProvider>
+  );
+};
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <ReduxProvider store={store}>
+    <ThemedApp />
   </ReduxProvider>
 );

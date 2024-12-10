@@ -1,5 +1,14 @@
 # React + Vite
 
+This project is a template for getting started with React in Vite.
+
+## Get started
+
+To get started, clone the repository and install the dependencies.
+
+```bash
+git clone
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
